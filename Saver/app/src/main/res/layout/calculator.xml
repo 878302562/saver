@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/btn_calculator"
+                android:id="@+id/bt_1"
+                android:tag="1"
+                android:text="1" />
+
+            <ImageView
+                android:layout_width="0.1dp"
+                android:layout_height="match_parent"
+                android:background="@color/btn" />
+
+            <Button
+                style="@style/btn_calculator"
+                android:id="@+id/bt_2"
+                android:tag="2"
+                android:text="2" />
+
+            <ImageView
+                android:layout_width="0.1dp"
+                android:layout_height="match_parent"
+                android:background="@color/btn" />
+
+            <Button
+                style="@style/btn_calculator"
+                android:id="@+id/bt_3"
+                android:tag="3"
+                android:text="3" />
+
+            <!--<ImageViewdelete.png-->
+                <!--android:layout_width="0.1dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@color/btn" />-->
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/delete"
+                android:id="@+id/bt_delete"
+                android:tag="delete"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/btn" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/btn_calculator"
+                android:tag="4"
+                android:text="4"
+                android:id="@+id/bt_4"/>
+
+            <ImageView
+                android:layout_width="0.1dp"
+                android:layout_height="match_parent"
+                android:background="@color/btn" />
+
+            <Button
+                style="@style/btn_calculator"
+                android:tag="5"
+                android:text="5"
+                android:id="@+id/bt_5" />
+
+            <ImageView
+                android:layout_width="0.1dp"
+                android:layout_height="match_parent"
+                android:background="@color/btn" />
+
+            <Button
+                style="@style/btn_calculator"
+                android:tag="6"
+                android:text="6"
+                android:id="@+id/bt_6" />
+
+            <ImageView
+                android:layout_width="0.1dp"
+                android:layout_height="match_parent"
+                android:background="@color/btn" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/plus"
+                android:id="@+id/bt_plus"
+                android:gravity="center"
+                android:tag="+" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/btn" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/btn_calculator"
+                        android:tag="7"
+                        android:text="7"
+                        android:id="@+id/bt_7" />
+
+                    <ImageView
+                        android:layout_width="0.1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/btn" />
+
+                    <Button
+                        style="@style/btn_calculator"
+                        android:tag="8"
+                        android:text="8"
+                        android:id="@+id/bt_8"/>
+
+                    <ImageView
+                        android:layout_width="0.1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/btn" />
+
+                    <Button
+                        style="@style/btn_calculator"
+                        android:tag="9"
+                        android:text="9"
+                        android:id="@+id/bt_9"/>
+
+                    <ImageView
+                        android:layout_width="0.1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/btn" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/btn" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/btn_calculator"
+                        android:text="C"
+                        android:tag="C"
+                        android:id="@+id/bt_C"/>
+
+                    <ImageView
+                        android:layout_width="0.1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/btn" />
+
+                    <Button
+                        style="@style/btn_calculator"
+                        android:tag="0"
+                        android:text="0"
+                        android:id="@+id/bt_0"/>
+
+                    <ImageView
+                        android:layout_width="0.1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/btn" />
+
+                    <Button
+                        style="@style/btn_calculator"
+                        android:tag="."
+                        android:text="."
+                        android:id="@+id/bt_dot"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="submit"
+                android:tag="submit"
+                android:background="@color/btn"
+                android:id="@+id/bt_submit"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
