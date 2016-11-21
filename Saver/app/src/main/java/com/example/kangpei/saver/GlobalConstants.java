@@ -10,6 +10,7 @@ public class GlobalConstants {
 
     /**
      * 记账类型的数组
+     * asdasdaasda
      */
     public static final String[] types = new String[]{
             "个人收入", "早午晚餐", "公共交通", "水果零食",
