@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.kangpei.saver.R;
 import com.example.kangpei.saver.View.fragment.ChartFragment;
 import com.example.kangpei.saver.View.fragment.MyFragment;
+import com.example.kangpei.saver.View.fragment.SaverFragment;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView mine;
 
     //Fragment Object
-    private MyFragment fg2,fg3;
+    private MyFragment fg3;
+    private SaverFragment saverFragment;
     private ChartFragment chartFragment;
     private FragmentManager fManager;
 
@@ -55,10 +57,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //隐藏所有Fragment
     private void hideAllFragment(FragmentTransaction fragmentTransaction){
-        if(fg2 != null)fragmentTransaction.hide(fg2);
         if(fg3 != null)fragmentTransaction.hide(fg3);
         if (chartFragment!=null)
             fragmentTransaction.hide(chartFragment);
+        if (saverFragment!=null){
+            fragmentTransaction.hide(saverFragment);
+        }
     }
 
 
@@ -80,11 +84,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.saver:
                 setSelected();
                 saver.setSelected(true);
-                if(fg2 == null){
-                    fg2 = new MyFragment();
-                    fTransaction.add(R.id.ly_content,fg2);
+                if(saverFragment == null){
+                    saverFragment = new SaverFragment();
+                    fTransaction.add(R.id.ly_content,saverFragment);
                 }else{
-                    fTransaction.show(fg2);
+                    fTransaction.show(saverFragment);
                 }
                 break;
             case R.id.mine:
