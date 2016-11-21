@@ -93,7 +93,7 @@ public class SaverFragment extends Fragment {
         viewPagerAdapter = new ViewPagerAdapter(viewList);
         viewPager.setAdapter(viewPagerAdapter);
 
-
+/////////test
     }
     public List<BillType> getBillTypeList(){
         BillType billType;
