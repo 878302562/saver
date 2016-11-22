@@ -54,7 +54,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/delete"
+                android:text="delete"
                 android:id="@+id/bt_delete"
                 android:tag="delete"
                 android:gravity="center" />
@@ -108,7 +108,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/plus"
+                android:text="+"
                 android:id="@+id/bt_plus"
                 android:gravity="center"
                 android:tag="+" />
@@ -218,7 +218,6 @@
                 android:layout_weight="1"
                 android:text="submit"
                 android:tag="submit"
-                android:background="@color/btn"
                 android:id="@+id/bt_submit"
                 android:gravity="center" />
         </LinearLayout>

@@ -184,8 +184,11 @@ public class SaverFragment extends Fragment {
                 tv_total.setText(plus(stringBuffer));
 
             }else if(tag.equals("delete")){
-                if (stringBuffer.length() == 0)
+                if (stringBuffer.length() == 0){
+                    tv_total.setText("0.0");
+                    tv_calculate.setText("0.0");
                     return;
+                }
                 stringBuffer.deleteCharAt(stringBuffer.length() - 1);
                 tv_calculate.setText(stringBuffer.toString());
                 tv_total.setText(plus(stringBuffer));
@@ -205,7 +208,7 @@ public class SaverFragment extends Fragment {
 
 
             }else if(tag.equals(".")){
-                if (stringBuffer.charAt(stringBuffer.length() - 1) == '.') {
+                if (tv_total.getText().equals("0.0") || stringBuffer.charAt(stringBuffer.length() - 1) == '.') {
                     return;
                 }
                 stringBuffer.append(tag);
