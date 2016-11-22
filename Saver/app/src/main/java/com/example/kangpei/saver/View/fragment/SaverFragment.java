@@ -24,6 +24,7 @@ import com.example.kangpei.saver.View.ExpandGridView;
 import com.example.kangpei.saver.View.adaper.BillArrayAdapter;
 import com.example.kangpei.saver.View.adaper.ViewPagerAdapter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -201,6 +202,10 @@ public class SaverFragment extends Fragment {
                     return;
                 }
                 bill.setMoney(tv_total.getText().toString());
+                SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String date = sDateFormat.format(new java.util.Date());
+                System.out.println(date);
+                bill.setTime(date);
                 BillDao billDao = new BillDao(MyApplication.getContext());
                 billDao.saveBill(bill);
                 Toast toast = Toast.makeText(MyApplication.getContext(), "success", Toast.LENGTH_SHORT);
