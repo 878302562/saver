@@ -202,7 +202,7 @@ public class SaverFragment extends Fragment {
                     return;
                 }
                 bill.setMoney(tv_total.getText().toString());
-                SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                SimpleDateFormat sDateFormat = new SimpleDateFormat("YY/MM/dd");
                 String date = sDateFormat.format(new java.util.Date());
                 System.out.println(date);
                 bill.setTime(date);
