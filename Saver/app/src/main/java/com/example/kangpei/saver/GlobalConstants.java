@@ -13,11 +13,11 @@ public class GlobalConstants {
      * asdasdaasdaasdasdsadsda
      */
     public static final String[] types = new String[]{
-            "个人收入", "早午晚餐", "公共交通", "水果零食",
-            "衣服鞋帽", "日常用品", "休闲聚餐", "运动健身",
-            "网上购物", "打车租车", "交流通讯", "旅游度假",
-            "化妆饰品", "数码设备", "通讯上网", "邮寄快递",
-            "宠物宝贝", "水电煤气", "学习培训", "其他杂项"
+            "Income", "Dinner", "Travel", "Snack",
+            "Clothes", "Grocery", "Recreation", "Atheletics",
+            "Shop", "Taxi", "Message", "Vocation",
+            "Cosmetic", "E-Device", "Internet", "Express",
+            "Animal", "Utilities", "Training", "Others"
     };
 
     public static final int[] colors = new int[]{
@@ -29,5 +29,6 @@ public class GlobalConstants {
             Color.rgb(110, 207, 239), Color.rgb(255, 105, 105), Color.rgb(255, 136, 34),
             Color.rgb(63, 171, 233), Color.rgb(88, 200, 77)
     };
+    public static int BUDGET=0;
 
 }

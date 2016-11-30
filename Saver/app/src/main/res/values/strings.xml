@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Saver</string>
+    <string name="app_name">Accounting</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -9,6 +9,10 @@
     <string name="tab_menu_saver">记账</string>
     <string name="tab_menu_report">报表</string>
     <string name="tab_menu_me">我的</string>
+    <string name="title_alert">"Alert"</string>
+    <string name="ok">"OK"</string>
+    <string name="cancel">"Cancel"</string>
+
 
 
 

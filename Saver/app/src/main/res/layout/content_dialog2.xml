@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" >
+
+       <lecho.lib.hellocharts.view.LineChartView
+           android:id="@+id/line_chart"
+           android:layout_width="match_parent"
+           android:layout_height="300dp">
+       </lecho.lib.hellocharts.view.LineChartView>
+
+       <!-- <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/title0"
+            android:background="@null"
+            android:textColor="@color/md_dialog_green_dark"
+            android:gravity="center|center_vertical"
+            android:text="Sure to Delete?"
+            android:textCursorDrawable="@drawable/color_cursor" />-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignLeft="@id/line_chart"
+            android:layout_alignRight="@id/line_chart"
+            android:layout_below="@id/line_chart"
+            android:background="#33333333" />
+    </RelativeLayout>
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:paddingBottom="8dp"-->
+    <!--android:paddingLeft="16dp"-->
+    <!--android:paddingRight="16dp" >-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/title1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="48dp"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:gravity="center"-->
+    <!--android:text="文件备注："-->
+    <!--android:textColor="#bb333333" />-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/edit1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="48dp"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:layout_toRightOf="@id/title1"-->
+    <!--android:background="@null"-->
+    <!--android:textColor="#ee333333"-->
+    <!--android:textCursorDrawable="@drawable/color_cursor" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1px"-->
+    <!--android:layout_alignLeft="@id/edit1"-->
+    <!--android:layout_alignRight="@id/edit1"-->
+    <!--android:layout_below="@id/edit1"-->
+    <!--android:background="#33333333" />-->
+    <!--</RelativeLayout>-->
+
+</LinearLayout>

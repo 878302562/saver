@@ -1,5 +1,6 @@
 package com.example.kangpei.saver.View;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private SaverFragment saverFragment;
     private ChartFragment chartFragment;
     private FragmentManager fManager;
+    private static Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +36,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         fManager = getFragmentManager();
         bindViews();
+        activity = this;
         saver.performClick();   //模拟一次点击，既进去后选择第一项
     }
+
 
     //UI组件初始化与事件绑定
     private void bindViews() {
@@ -79,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     fTransaction.add(R.id.ly_content,chartFragment);
                 }else{
                     fTransaction.show(chartFragment);
+                    chartFragment.onResume();
                 }
                 break;
             case R.id.saver:
@@ -98,11 +103,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     fg3 = new MyFragment();
                     fTransaction.add(R.id.ly_content,fg3);
                 }else{
+                    // fTransaction.show(fg3);
+                    fg3.onResume();
                     fTransaction.show(fg3);
                 }
                 break;
 
         }
         fTransaction.commit();
+    }
+    public static Activity getActivity(){
+        return activity;
     }
 }

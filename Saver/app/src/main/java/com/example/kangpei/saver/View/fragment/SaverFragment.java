@@ -1,10 +1,14 @@
 package com.example.kangpei.saver.View.fragment;
 
+
 import android.app.Fragment;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.transition.Fade;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +24,14 @@ import com.example.kangpei.saver.Model.bean.BillType;
 import com.example.kangpei.saver.Model.db.BillDao;
 import com.example.kangpei.saver.MyApplication;
 import com.example.kangpei.saver.R;
+import com.example.kangpei.saver.Utils.NotifyUtils;
+import com.example.kangpei.saver.Utils.SPUtils;
 import com.example.kangpei.saver.View.ExpandGridView;
+import com.example.kangpei.saver.View.MainActivity;
 import com.example.kangpei.saver.View.adaper.BillArrayAdapter;
 import com.example.kangpei.saver.View.adaper.ViewPagerAdapter;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +42,10 @@ import java.util.List;
 
 public class SaverFragment extends Fragment {
 
+    private final String pickerValueKey = "pickerValueKey";
+    private final String ISCHECKED="isChecked";
+    private final String BUDGET="budget";
+    private final String TOTALOUTKEY = "totalOutKey";
     private ViewPager viewPager;
     private ArrayList<View> viewList;
     private ViewPagerAdapter viewPagerAdapter;
@@ -43,6 +55,9 @@ public class SaverFragment extends Fragment {
     private TextView tv_total;
     private StringBuffer stringBuffer;
     private Bill bill;
+    private ImageView img_left;
+    private ImageView img_right;
+    private NotifyUtils notifyUtils;
 
     private Button bt_0;
     private Button bt_1;
@@ -73,6 +88,7 @@ public class SaverFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.main,container,false);
         init();
+
         return view;
     }
 
@@ -80,10 +96,13 @@ public class SaverFragment extends Fragment {
         initButtons();
         stringBuffer = new StringBuffer();
         bill = new Bill();
+        bill.setTypeId("0");
         tv_calculate = (TextView)view.findViewById(R.id.tv_calculate);
         tv_total = (TextView)view.findViewById(R.id.tv_total);
         billTypeList = getBillTypeList();
         img_flag = (ImageView)view.findViewById(R.id.img_flag);
+        img_left = (ImageView)view.findViewById(R.id.img_left);
+        img_right = (ImageView)view.findViewById(R.id.img_right);
 //        Toolbar toolbar = (Toolbar)view.findViewById(R.id.toolbar);
 //        toolbar.setTitle("Add an Item");
         viewPager = (ViewPager)view.findViewById(R.id.viewPager);
@@ -93,6 +112,8 @@ public class SaverFragment extends Fragment {
         viewList.add(changePager(3));
         viewPagerAdapter = new ViewPagerAdapter(viewList);
         viewPager.setAdapter(viewPagerAdapter);
+        viewPager.setOnPageChangeListener(new PageChangeListener());
+        notifyUtils=new NotifyUtils(MyApplication.getContext());
 
 /////////test
     }
@@ -180,6 +201,9 @@ public class SaverFragment extends Fragment {
                 tv_calculate.setText(stringBuffer.toString());
                 //System.out.println(tag);
             }else if(tag.equals("+")){
+                if (tv_total.getText().equals("0.0")) {
+                    return;
+                }
                 stringBuffer.append(tag);
                 tv_calculate.setText(stringBuffer.toString());
                 tv_total.setText(plus(stringBuffer));
@@ -201,15 +225,21 @@ public class SaverFragment extends Fragment {
                 if (tv_total.getText().equals("0.0")) {
                     return;
                 }
+
                 bill.setMoney(tv_total.getText().toString());
-                SimpleDateFormat sDateFormat = new SimpleDateFormat("YY/MM/dd");
+                SimpleDateFormat sDateFormat = new SimpleDateFormat("yy/MM/dd");
                 String date = sDateFormat.format(new java.util.Date());
                 System.out.println(date);
                 bill.setTime(date);
                 BillDao billDao = new BillDao(MyApplication.getContext());
                 billDao.saveBill(bill);
+                stringBuffer = new StringBuffer();
+                tv_total.setText("0.0");
+                tv_calculate.setText("0.0");
+                checkBudget();
                 Toast toast = Toast.makeText(MyApplication.getContext(), "success", Toast.LENGTH_SHORT);
                 toast.show();
+
 
 
             }else if(tag.equals(".")){
@@ -222,6 +252,20 @@ public class SaverFragment extends Fragment {
             }
         }
     };
+    public void checkBudget(){
+        boolean isChecked=(Boolean) SPUtils.getObject(MyApplication.getContext(),ISCHECKED,true);
+        int budget = (Integer) SPUtils.getObject(MyApplication.getContext(),BUDGET,1);
+        int percent = (Integer) SPUtils.getObject(MyApplication.getContext(),pickerValueKey,1);
+        float totalOut = (Float) SPUtils.getObject(MyApplication.getContext(),TOTALOUTKEY,1.0f);
+        Log.d("totalOut",totalOut+"");
+        Log.d("budget",""+budget);
+        Log.d("percent",percent+"");
+        Log.d("check",isChecked+"");
+        if(totalOut>(percent*budget/100) && isChecked){
+            DecimalFormat decimalFormat = new DecimalFormat("#.##");
+            notifyUtils.postNotification("Reminder","You have spent:" +decimalFormat.format(totalOut/budget*100)+"% of your budget!");
+        }
+    }
     private String plus(StringBuffer stringBuffer) {
         if (!stringBuffer.toString().contains("+"))
             return stringBuffer.toString();
@@ -232,6 +276,40 @@ public class SaverFragment extends Fragment {
             total += Float.valueOf(nums[i]);
         }
         return String.valueOf(total);
+    }
+    class PageChangeListener implements ViewPager.OnPageChangeListener {
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+            // TODO Auto-generated method stub
+
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+        }
+
+        @Override
+        public void onPageSelected(int arg0) {
+            if(arg0 == 0){
+                img_left.setImageResource(R.drawable.empty);
+                img_right.setImageResource(R.drawable.right);
+            }else if(arg0 == 1){
+                img_left.setImageResource(R.drawable.left);
+                img_right.setImageResource(R.drawable.right);
+            }else if(arg0 == 2){
+                img_left.setImageResource(R.drawable.left);
+                img_right.setImageResource(R.drawable.empty);
+                Log.d("asdfsdf","page 3");
+            }
+//            for (int i = 0; i < mimageViews.length; i++) {
+//                mimageViews[arg0].setBackgroundResource(R.drawable.stop2);
+//                if (arg0 != i) {
+//                    mimageViews[i].setBackgroundResource(R.drawable.stop1);
+//                }
+//            }
+        }
     }
 
 }

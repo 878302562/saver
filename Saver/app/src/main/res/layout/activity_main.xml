@@ -17,9 +17,10 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="@color/text_topbar"
-            android:text="记账"/>
+            android:textSize="25sp"
+            android:text="Accounting"
+            android:textColor="@color/top_title_color"
+            />
 
 
         <View
@@ -50,7 +51,7 @@
             android:drawableTop="@drawable/tab_menu_channel"
             android:gravity="center"
             android:padding="5dp"
-            android:text="@string/tab_menu_saver"
+            android:text="save"
             android:textColor="@drawable/tab_menu_text"
             android:textSize="16sp" />
 
@@ -64,7 +65,7 @@
             android:drawableTop="@drawable/tab_menu_message"
             android:gravity="center"
             android:padding="5dp"
-            android:text="@string/tab_menu_report"
+            android:text="report"
             android:textColor="@drawable/tab_menu_text"
             android:textSize="16sp" />
 
@@ -78,7 +79,7 @@
             android:drawableTop="@drawable/tab_menu_better"
             android:gravity="center"
             android:padding="5dp"
-            android:text="@string/tab_menu_me"
+            android:text="mine"
             android:textColor="@drawable/tab_menu_text"
             android:textSize="16sp" />
 
@@ -101,5 +102,12 @@
         android:id="@+id/ly_content">
 
     </FrameLayout>
+
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/viewPager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_above="@id/div_tab_bar"-->
+        <!--android:layout_below="@id/ly_top_bar" />-->
 
 </RelativeLayout>

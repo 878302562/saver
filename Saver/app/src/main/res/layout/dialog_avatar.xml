@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.example.kangpei.saver.View.IconView
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:id="@+id/img_show"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:src="@drawable/avatar_0" />
+
+    <Button
+        android:id="@+id/bt_chooseFromAPP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="choose from APP" />
+    <!--<Button-->
+        <!--android:id="@+id/bt_chooseFromStorage"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="choose from storage" />-->
+
+</LinearLayout>

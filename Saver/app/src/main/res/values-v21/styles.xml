@@ -11,6 +11,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bt_color</item>
         <!--<item name="android:textSize">30sp</item>-->
         <!--<item name="android:background">@drawable/keyboard</item>-->
         <item name="android:textColor">#666666</item>

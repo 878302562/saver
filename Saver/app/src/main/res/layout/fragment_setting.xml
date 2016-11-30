@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_top"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@color/md_dialog_green_dark"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="7dp"
+                    android:text="Personal Setting"
+                    android:textColor="@color/whitesmoke"
+                    android:textSize="15sp" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@color/md_dialog_green_dark">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <com.example.kangpei.saver.View.IconView
+                    android:id="@+id/img_avatar"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/avatar_0" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:minWidth="100dp"
+                    android:text="Click To Set Name"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/tvbg"
+                android:gravity="fill_vertical"
+                android:paddingLeft="20dp"
+                android:text="Reminder Setting"
+                android:textColor="@color/ev_setting" />
+            <Button
+                android:id="@+id/budget"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="start"
+                android:background="@color/btbg"
+                android:drawableLeft="@drawable/budget"
+                android:drawableRight="@drawable/modify"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Monthly Budget:"
+                android:textAlignment="textStart"
+                android:textColor="@color/ev_setting" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/btn" />
+
+            <Button
+                android:id="@+id/bt_picker"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_gravity="start"
+                android:background="@color/btbg"
+                android:drawableLeft="@drawable/setting"
+                android:drawableRight="@drawable/modify"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Reminder Setting: 0%"
+                android:textAlignment="textStart"
+                android:textColor="@color/ev_setting" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/btn" />
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_marginTop="0dp"-->
+                <!--android:background="@color/tvbg"-->
+                <!--android:gravity="fill_vertical"-->
+                <!--android:paddingLeft="20dp"-->
+                <!--android:fontFamily="cursive"-->
+                <!--android:text="Notification"-->
+                <!--android:textColor="@color/bg_black" />-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0.5dp"-->
+                <!--android:background="@color/btn" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/notify"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="35dp"-->
+                <!--android:layout_gravity="start"-->
+                <!--android:background="@color/btbg"-->
+                <!--android:drawableLeft="@drawable/notification"-->
+                <!--android:drawableRight="@drawable/modify"-->
+                <!--android:paddingLeft="20dp"-->
+                <!--android:paddingRight="20dp"-->
+                <!--android:text="Notification"-->
+                <!--android:textAlignment="textStart"-->
+                <!--android:fontFamily="sans-serif-smallcaps"-->
+                <!--android:textColor="@color/bg_black" />-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/tvbg"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/btbg"
+                android:textColor="@color/bg_black">
+
+                <TextView
+                    android:id="@+id/notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="fill_vertical"
+                    android:drawableLeft="@drawable/notification"
+                    android:text="Notification"
+                    android:textColor="@color/ev_setting" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp">
+
+                    <Switch
+                        android:id="@+id/switch1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="true" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/btn" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -24,7 +24,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:paddingTop="25dp"
-                    android:text="支出总额"
+                    android:text="Total Out"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:paddingTop="25dp"
-                    android:text="收入总额"
+                    android:text="Total In"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -75,5 +75,10 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="@color/top_title_color" />
-</LinearLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_view">
+        </ListView>
+    </LinearLayout>
 </LinearLayout>

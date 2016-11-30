@@ -44,13 +44,15 @@
                 android:id="@+id/bt_3"
                 android:tag="3"
                 android:text="3" />
+            <ImageView
+                android:layout_width="0.1dp"
+                android:layout_height="match_parent"
+                android:background="@color/btn" />
 
-            <!--<ImageViewdelete.png-->
-                <!--android:layout_width="0.1dp"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:background="@color/btn" />-->
+
 
             <Button
+                style="@style/btn_calculator"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -105,6 +107,7 @@
                 android:background="@color/btn" />
 
             <Button
+                style="@style/btn_calculator"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -209,10 +212,15 @@
                         android:tag="."
                         android:text="."
                         android:id="@+id/bt_dot"/>
+                    <ImageView
+                        android:layout_width="0.1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/btn" />
                 </LinearLayout>
             </LinearLayout>
 
             <Button
+                style="@style/btn_calculator"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

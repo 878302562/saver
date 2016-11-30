@@ -15,6 +15,10 @@
     <color name="white">#ffffff</color>
     <color name="rise_number_text_color_red">#FF0000</color>
 
+    <color name="tvbg">#ded8d7</color>
+    <color name="btbg">#fcfbfb</color>
+    <color name="ev_setting">#685e5e</color>
+
     <color name="btn">#c1b7b7</color>
     <!-- 红1 -->
     <color name="red1">#CC0000</color>
